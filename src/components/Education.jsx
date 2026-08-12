@@ -37,6 +37,7 @@ function Education() {
             <h3>
               Bachelor of Technology
             </h3>
+            <h4>Rajiv Gandhi University of Knowledge Technologies Ongole, Andhra Pradesh</h4>
 
             <h4>
               Computer Science Engineering

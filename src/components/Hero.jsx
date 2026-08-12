@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Download,
-  ArrowDown,
-  Mouse,
-} from "lucide-react";
+import { Download } from "lucide-react";
 
 function Hero() {
   return (
@@ -271,37 +267,6 @@ function Hero() {
         </motion.div>
 
       </div>
-
-
-      {/* SCROLL DOWN */}
-      <motion.a
-        href="#about"
-        className="scroll-down"
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          y: [0, 10, 0],
-        }}
-        transition={{
-          opacity: {
-            duration: 1,
-            delay: 1.5,
-          },
-          y: {
-            duration: 1.8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
-        }}
-      >
-
-        <span>Scroll Down</span>
-
-        <Mouse size={24} />
-
-        <ArrowDown size={18} />
-
-      </motion.a>
 
     </section>
   );

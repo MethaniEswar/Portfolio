@@ -1,54 +1,55 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") !== "light";
+  });
 
-  const links = [
-    "Home",
-    "About",
-    "Skills",
-    "Projects",
-    "Education",
-    "Contact"
-  ];
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
-    <motion.nav
-      className="navbar"
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
+    <nav className="navbar">
       <div className="container nav-container">
 
-        <a href="#home" className="logo">
+        <button className="logo">
           Eswar.M
-        </a>
-
-        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-          {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link}
-            </a>
-          ))}
-        </div>
-
-        <button
-          className="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+
+          {/* Theme Toggle */}
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle theme"
+          >
+            {darkMode ? (
+              <Sun size={20} />
+            ) : (
+              <Moon size={20} />
+            )}
+          </button>
+        </div>
+
       </div>
-    </motion.nav>
+    </nav>
   );
 }
 

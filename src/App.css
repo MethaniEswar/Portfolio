@@ -548,43 +548,6 @@ section {
   }
 }
 /* =========================================================
-   SCROLL DOWN
-========================================================= */
-
-.scroll-down,
-.scroll-indicator {
-  position: absolute;
-
-  bottom: 25px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  z-index: 10;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 5px;
-
-  color: var(--text-muted);
-
-  font-size: 13px;
-
-  letter-spacing: 1px;
-}
-
-.scroll-down svg,
-.scroll-indicator svg {
-  color: var(--primary);
-}
-
-
-/* =========================================================
    ABOUT
 ========================================================= */
 
@@ -1301,4 +1264,499 @@ section {
 
     transition-duration: 0.01ms !important;
   }
+}
+
+/* =========================================
+   THEME VARIABLES
+========================================= */
+
+:root {
+  --background: #020617;
+  --background-secondary: #0f172a;
+  --card-background: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --primary: #38bdf8;
+}
+
+/* =========================================
+   LIGHT MODE - STRONG TEXT
+========================================= */
+
+body.light-mode {
+  --background: #f8fafc;
+  --background-secondary: #ffffff;
+  --card-background: #ffffff;
+
+  /* Darker text */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+
+  --border-color: #cbd5e1;
+  --primary: #0284c7;
+}
+
+
+/* Main text */
+body.light-mode {
+  color: #0f172a;
+}
+
+
+/* Navbar */
+body.light-mode .nav-links a {
+  color: #1e293b;
+}
+
+body.light-mode .nav-links a:hover {
+  color: #0284c7;
+}
+
+
+/* Hero */
+body.light-mode .hero h1 {
+  color: #0f172a;
+}
+
+body.light-mode .hero h2 {
+  color: #334155;
+}
+
+body.light-mode .hero-description {
+  color: #334155;
+}
+
+body.light-mode .hero-small {
+  color: #0284c7;
+}
+
+
+/* About */
+body.light-mode .about-content p {
+  color: #334155;
+}
+
+body.light-mode .about-card h3 {
+  color: #0f172a;
+}
+
+
+/* Skills */
+body.light-mode .skill-card {
+  color: #0f172a;
+}
+
+body.light-mode .skill-card h3 {
+  color: #0f172a;
+}
+
+
+/* Projects */
+body.light-mode .project-card {
+  color: #0f172a;
+}
+
+body.light-mode .project-card h3 {
+  color: #0f172a;
+}
+
+body.light-mode .project-card p {
+  color: #334155;
+}
+
+body.light-mode .project-tech {
+  color: #0284c7;
+}
+
+
+/* Education */
+body.light-mode .education-card {
+  color: #0f172a;
+}
+
+body.light-mode .education-card h3 {
+  color: #0f172a;
+}
+
+body.light-mode .education-card p {
+  color: #334155;
+}
+
+
+/* Contact */
+body.light-mode .contact-description {
+  color: #334155;
+}
+
+body.light-mode .contact-info p {
+  color: #1e293b;
+}
+
+
+/* Footer */
+body.light-mode .footer {
+  color: #475569;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--border-color);
+
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+.nav-links a {
+  color: var(--text-secondary);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+
+/* =========================================
+   THEME TOGGLE
+========================================= */
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 10px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+
+  background: var(--card-background);
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.theme-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: rotate(15deg) scale(1.08);
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.about-card,
+.skill-card,
+.project-card,
+.education-card {
+  background: var(--card-background);
+  border-color: var(--border-color);
+
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.hero-description,
+.about-content p,
+.project-card p,
+.education-card p,
+.contact-description {
+  color: var(--text-secondary);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.secondary-btn {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+
+.secondary-btn:hover {
+  background: var(--primary);
+  color: var(--background);
+}
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 35px;
+  margin-top: 50px;
+}
+
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.contact-info-card,
+.contact-form-card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 35px;
+
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover,
+.contact-form-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 35px rgba(56, 189, 248, 0.08);
+}
+
+
+.contact-info-card h3,
+.contact-form-card h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+
+.contact-info-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   CONTACT ITEMS
+========================================= */
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 22px 0;
+}
+
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--primary);
+
+  flex-shrink: 0;
+}
+
+
+.contact-item span {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+
+.contact-item a,
+.contact-item p {
+  margin: 0;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contact-item a:hover {
+  color: var(--primary);
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.contact-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+
+.contact-socials a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  color: var(--text-secondary);
+
+  transition: 0.3s ease;
+}
+
+
+.contact-socials a:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background: var(--background);
+  color: var(--text-primary);
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.send-message-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: var(--primary);
+  color: #0f172a;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+
+.send-message-btn:hover {
+  box-shadow:
+    0 8px 25px rgba(56, 189, 248, 0.25);
 }
