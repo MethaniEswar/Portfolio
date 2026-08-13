@@ -896,6 +896,11 @@ section {
 
   color: var(--text-primary);
 }
+.education-card h4 {
+  margin-bottom: 10px;
+
+  color: var(--text-primary);
+}
 
 .education-year {
   color: var(--primary);
@@ -1966,5 +1971,225 @@ body {
 
   .contact-form button {
     width: 100%;
+  }
+}
+/* =========================================================
+   FINAL MOBILE NAVBAR FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+
+    z-index: 99999;
+
+    background: var(--background-secondary);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Navbar container */
+  .nav-container {
+    width: 100% !important;
+    height: 65px !important;
+    min-height: 65px !important;
+
+    padding: 0 18px !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    justify-content: space-between !important;
+    align-items: center !important;
+
+    gap: 0 !important;
+  }
+
+  /* Logo */
+  .logo {
+    display: block !important;
+
+    font-size: 23px !important;
+    line-height: 1;
+
+    margin: 0;
+  }
+
+  /* =====================================================
+     HAMBURGER BUTTON
+  ===================================================== */
+
+  .menu-button {
+    display: flex !important;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--border-light) !important;
+    border-radius: 10px;
+
+    background: var(--card-background) !important;
+
+    color: var(--text-primary) !important;
+
+    cursor: pointer;
+
+    z-index: 100001;
+
+    flex-shrink: 0;
+  }
+
+  .menu-button:hover {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+  }
+
+
+  /* =====================================================
+     MOBILE NAVIGATION MENU
+  ===================================================== */
+
+  .nav-links {
+    position: absolute !important;
+
+    top: 65px !important;
+    left: 0 !important;
+
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 18px !important;
+
+    padding: 25px 20px !important;
+    margin: 0 !important;
+
+    background: var(--background-secondary) !important;
+
+    border-bottom: 1px solid var(--border) !important;
+
+    box-shadow: 0 15px 30px var(--shadow);
+
+    /* CLOSED */
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    transform: translateY(-15px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+
+    z-index: 99998;
+  }
+
+
+  /* OPEN */
+  .nav-links.active {
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+  }
+
+
+  /* Navigation links */
+
+  .nav-links a,
+  .nav-links .nav-link {
+    display: block !important;
+
+    width: auto;
+
+    padding: 5px 10px !important;
+
+    color: var(--text-primary) !important;
+
+    font-size: 16px !important;
+
+    text-align: center;
+
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover,
+  .nav-links .nav-link:hover {
+    color: var(--primary) !important;
+  }
+
+
+  /* Theme button */
+
+  .nav-links .theme-toggle {
+    display: flex !important;
+
+    width: 42px;
+    height: 42px;
+
+    margin-top: 3px;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 50%;
+
+    background: var(--card-background);
+
+    color: var(--text-primary);
+
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 62px !important;
+  }
+
+  .nav-container {
+    height: 62px !important;
+    min-height: 62px !important;
+
+    padding: 0 15px !important;
+  }
+
+  .nav-links {
+    top: 62px !important;
+  }
+
+  .logo {
+    font-size: 21px !important;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
   }
 }

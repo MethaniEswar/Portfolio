@@ -39,7 +39,8 @@ function Skills() {
         "GitHub",
         "Docker",
         "Maven",
-        "VS Code"
+        "VS Code",
+        "Eclipse"
       ]
     }
   ];
