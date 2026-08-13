@@ -43,11 +43,7 @@ function Contact() {
         >
           <h2>Get In Touch</h2>
 
-          <p className="contact-description">
-            Have a project in mind? I'm always interested in learning new
-            technologies, working on exciting projects and connecting with
-            other developers. Feel free to reach out to me.
-          </p>
+          
         </motion.div>
 
         {/* Contact Layout */}
@@ -75,7 +71,6 @@ function Contact() {
               </div>
 
               <div>
-                <span>Email</span>
                 <a href="mailto:methanieswar@gmail.com">
                   methanieswar@gmail.com
                 </a>
@@ -89,7 +84,6 @@ function Contact() {
               </div>
 
               <div>
-                <span>Phone</span>
                 <a href="tel:+917032689374">
                   +91 7032689374
                 </a>
@@ -103,13 +97,13 @@ function Contact() {
               </div>
 
               <div>
-                <span>Location</span>
                 <p>Guntur, Andhra Pradesh, India</p>
               </div>
             </div>
 
           </motion.div>
-
+          </div>
+          <div className="contact-container">
           {/* RIGHT SIDE - MESSAGE FORM */}
           <motion.div
             className="contact-form-card"
